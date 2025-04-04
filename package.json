@@ -1,15 +1,17 @@
 {
-  "name": "portafolio-omar-caiguan",
+  "name": "omar-caiguan",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "tsc && vite build",
+    "predeploy": "npm run build",
+    "deploy": "vercel",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.6.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -40,5 +42,5 @@
   "bugs": {
     "url": "https://github.com/omar-caiguan-ojeda/omar-caiguan-portfolio/issues"
   },
-  "homepage": "https://github.com/omar-caiguan-ojeda/omar-caiguan-portfolio#readme"
+  "homepage": "https://omar-caiguan.vercel.app"
 }

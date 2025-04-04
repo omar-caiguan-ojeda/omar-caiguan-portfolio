@@ -1,7 +1,8 @@
 // Home.tsx
 import { Link } from "react-router-dom";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { SiDiscord } from "react-icons/si";
 
 const Home = () => {
   return (
@@ -76,7 +77,7 @@ const Home = () => {
           >
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/omar-leonardo-caiguan-ojeda/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-accent transition-all duration-300"
@@ -85,12 +86,39 @@ const Home = () => {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="https://github.com"
+              href="https://github.com/omar-caiguan-ojeda"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-accent transition-all duration-300"
             >
               <FaGithub size={32} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href="mailto:omar.caiguan@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-accent transition-all duration-300"
+            >
+              <FaEnvelope size={32} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href="https://discord.com/users/1061385061791969360"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-accent transition-all duration-300"
+            >
+              <SiDiscord size={32} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href="https://wa.me/+56930579869"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-accent transition-all duration-300"
+            >
+              <FaWhatsapp size={32} />
             </motion.a>
           </motion.div>
         </div>
@@ -99,4 +127,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home
