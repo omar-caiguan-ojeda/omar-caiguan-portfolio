@@ -101,7 +101,7 @@ const About = () => {
       description: "Gestión y administración de gimnasios",
       images: ["/P1/1.png", "/P1/2.png", "/P1/3.png"],
       githubLink: "https://github.com/omar-caiguan-ojeda/Fit-Manager-PF",
-      deployLink: "https://omar-caiguan.vercel.app/home",
+      deployLink: "https://fitmanager-henry.vercel.app/home",
       techIcons: [
         SiTypescript,
         SiNestjs,
@@ -121,7 +121,7 @@ const About = () => {
       description: "Portal de videojuegos",
       images: ["/P2/1.png", "/P2/2.png", "/P2/3.png"],
       githubLink: "https://github.com/omar-caiguan-ojeda/UGPS-Challenge",
-      deployLink: "https://omar-caiguan.vercel.app/about/",
+      deployLink: "https://gamehub-sooty-iota.vercel.app/",
       techIcons: [SiTypescript, SiReact, SiChakraui],
     },
     {
