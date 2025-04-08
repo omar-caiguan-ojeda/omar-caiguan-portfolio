@@ -1,4 +1,4 @@
-// About.tsx
+// src/pages/About.tsx
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
@@ -121,7 +121,7 @@ const About = () => {
       description: "Portal de videojuegos",
       images: ["/P2/1.png", "/P2/2.png", "/P2/3.png"],
       githubLink: "https://github.com/omar-caiguan-ojeda/UGPS-Challenge",
-      deployLink: "https://gamehub-sooty-iota.vercel.app/",
+      deployLink: "https://omar-caiguan.vercel.app/about/",
       techIcons: [SiTypescript, SiReact, SiChakraui],
     },
     {

@@ -1,4 +1,4 @@
-// Technologies.tsx
+// src/components/Technologies.tsx
 import {
   SiJavascript,
   SiTypescript,

@@ -1,4 +1,4 @@
-// Home.tsx
+// src/pages/Home.tsx
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -17,7 +17,7 @@ const Home = () => {
             <div className="relative group cursor-pointer p-1">
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
               <img
-                src="../../public/omar-photo.jpg"
+                src="/omar-photo.jpg"
                 alt="Omar Caiguan"
                 className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-2 border-primary shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
               />
