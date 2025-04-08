@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* Logo y nombre */}
           <Link to="/" className="flex items-center space-x-4 group">
             <img
-              src="/omar-photo.jpg"
+              src="/omar-photo.JPG"
               alt="Omar Caiguan"
               className="w-12 h-12 rounded-full object-cover border border-primary/50 transition-all duration-300 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20"
             />
