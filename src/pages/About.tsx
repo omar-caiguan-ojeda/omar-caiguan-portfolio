@@ -32,10 +32,10 @@ import CodeBackgroundAbout from "../components/CodeBackgroundAbout";
 import { motion } from "framer-motion";
 
 const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.ElementType; name: string }[] }) => (
-  <div className="bg-darkBg/50 backdrop-blur-sm p-8 rounded-lg border border-primary/20 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
-    <h3 className="text-textLight text-xl font-semibold mb-8 text-center">{title}</h3>
+  <div className="bg-darkBg/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 rounded-lg border border-primary/20 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
+    <h3 className="text-textLight text-lg xs:text-xl font-semibold mb-6 xs:mb-8 text-center">{title}</h3>
     <div className="flex-grow flex items-center justify-center">
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
         {icons.map(({ Icon, name }) => (
           <div
             key={name}
@@ -43,8 +43,8 @@ const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.El
             title={name}
           >
             <Icon
-              className="text-4xl text-secondary group-hover:text-accent transition-colors duration-300"
-              size={48}
+              className="text-2xl xs:text-3xl sm:text-4xl text-secondary group-hover:text-accent transition-colors duration-300"
+              size={36}
             />
             <span className="text-xs text-secondary/0 group-hover:text-secondary transition-all duration-300 mt-2 text-center">
               {name}
@@ -212,14 +212,14 @@ const About = () => {
         transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
         className="max-w-4xl mx-auto p-6 pt-20 flex-grow z-20"
       >
-        <section id="about" className="mb-12">
+        <section id="about-section" className="mb-12">
           <h2 className="text-3xl font-bold text-textLight mb-6 cursor-pointer" onClick={handleDiluteAll}>Sobre Mí</h2>
           <p className="mt-4 text-lg leading-relaxed text-textLight">
             Soy Omar Leonardo Caiguan Ojeda, desarrollador Full Stack especializado en Back-End. Me apasiona construir soluciones escalables y eficientes con tecnologías como TypeScript, React y Node.js. Con experiencia en proyectos como plataformas de e-commerce y gestión de gimnasios, busco integrarme a equipos donde pueda crecer y aportar valor.
           </p>
         </section>
 
-        <section id="technologies" className="mb-12">
+        <section id="tech-section" className="mb-12">
           <h2 className="text-3xl font-bold text-textLight mb-6">Tecnologías</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {techCategories.map((category) => (
@@ -228,7 +228,7 @@ const About = () => {
           </div>
         </section>
 
-        <section id="projects" className="py-8">
+        <section id="projects-section" className="py-8">
           <h2 className="text-3xl font-bold text-textLight mb-6">Proyectos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project) => (
@@ -237,7 +237,7 @@ const About = () => {
           </div>
         </section>
 
-        <section id="contact" className="py-8">
+        <section id="contact-section" className="py-8">
           <h2 className="text-3xl font-bold text-textLight mb-6 text-center">Contacto</h2>
           <div className="flex justify-between gap-4 max-w-2xl mx-auto">
             <a
@@ -327,7 +327,7 @@ const About = () => {
         </section>
 
         <motion.button
-          className="px-6 py-3 bg-darkBg/80 border-2 border-accent text-accent rounded-lg transition-all duration-300 mt-8 hover:bg-accent hover:text-darkBg hover:shadow-lg hover:shadow-accent/50 shadow-md shadow-accent/10"
+          className="w-full max-w-[300px] px-4 py-3 bg-darkBg/80 border-2 border-accent text-accent rounded-lg transition-all duration-300 mt-8 hover:bg-accent hover:text-darkBg hover:shadow-lg hover:shadow-accent/50 shadow-md shadow-accent/10 text-base xs:text-lg"
           onClick={handleDiluteAll}
           initial={false}
           animate={diluteAll ? { opacity: 0, filter: 'blur(8px)' } : { opacity: 1, filter: 'blur(0px)' }}
