@@ -1,55 +1,81 @@
-# React + TypeScript + Vite
+# Portafolio Web - Omar Caiguan Ojeda
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio profesional desarrollado con React, TypeScript y Vite. Presenta mis proyectos, tecnologías dominadas y permite contacto directo. El sitio es moderno, responsivo y cuenta con animaciones fluidas para una experiencia de usuario atractiva.
 
-Currently, two official plugins are available:
+## Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Navbar interactivo:**
+  - Navegación fluida entre secciones: Sobre mí, Tecnologías, Proyectos y Contacto.
+  - Soporte para scroll suave a secciones específicas del About.
+  - Menú hamburguesa responsivo para dispositivos móviles.
 
-## Expanding the ESLint configuration
+- **Animaciones avanzadas:**
+  - Transiciones de entrada y salida usando Framer Motion.
+  - Animaciones sincronizadas entre foto y contenido en la Home.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Páginas y secciones:**
+  - **Home:** Presentación personal, animación de bienvenida y acceso rápido a About.
+  - **About:**
+    - Sección "Sobre mí" con descripción profesional.
+    - Tecnologías agrupadas por categorías y visualizadas con iconos.
+    - Proyectos destacados con links a GitHub y despliegues.
+    - Sección de contacto y formulario funcional vía EmailJS.
 
+- **Integraciones:**
+  - **Framer Motion:** Animaciones de componentes y transiciones.
+  - **React Router:** Navegación SPA entre Home y About.
+  - **EmailJS:** Formulario de contacto funcional (requiere variables en `.env`).
+  - **React Icons:** Iconografía moderna y variada.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Estilo y UX:**
+  - Diseño responsive adaptado a móviles y escritorio.
+  - Fondo animado tipo "matrix".
+  - Favicon personalizado.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalación y uso
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clona el repositorio:**
+   ```sh
+   git clone https://github.com/omar-caiguan-ojeda/omar-caiguan-portfolio.git
+   cd omar-caiguan-portfolio
+   ```
+2. **Instala dependencias:**
+   ```sh
+   npm install
+   ```
+3. **Configura EmailJS (opcional):**
+   Crea un archivo `.env` con tus claves de EmailJS:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=tu_service_id
+   VITE_EMAILJS_TEMPLATE_ID=tu_template_id
+   VITE_EMAILJS_USER_ID=tu_user_id
+   ```
+4. **Inicia el proyecto:**
+   ```sh
+   npm run dev
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Estructura del proyecto
+
+- `src/components/`: Componentes reutilizables (Navbar, Footer, CodeBackground, etc).
+- `src/pages/`: Páginas principales (Home, About).
+- `index.html`: Entrada principal y referencia al favicon.
+- `icon.png`: Favicon personalizado.
+
+## Scripts útiles
+
+- `npm run dev` — Inicia el servidor de desarrollo.
+- `npm run build` — Genera la versión de producción.
+- `npm run preview` — Previsualiza el build localmente.
+
+## Créditos y agradecimientos
+
+- [React](https://react.dev/), [Vite](https://vitejs.dev/), [Framer Motion](https://www.framer.com/motion/), [EmailJS](https://www.emailjs.com/), [React Icons](https://react-icons.github.io/react-icons/)
+
+---
+
+Desarrollado por **Omar Leonardo Caiguan Ojeda**
+
+---
+
+> Siéntete libre de usar este portafolio como inspiración para tus propios proyectos.

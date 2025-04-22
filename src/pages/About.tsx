@@ -30,6 +30,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import CodeBackgroundAbout from "../components/CodeBackgroundAbout";
 import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
 const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.ElementType; name: string }[] }) => (
   <div className="bg-darkBg/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 rounded-lg border border-primary/20 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
@@ -213,33 +214,94 @@ const About = () => {
         className="max-w-4xl mx-auto p-6 pt-20 flex-grow z-20"
       >
         <section id="about-section" className="mb-12">
-          <h2 className="text-3xl font-bold text-textLight mb-6 cursor-pointer" onClick={handleDiluteAll}>Sobre Mí</h2>
-          <p className="mt-4 text-lg leading-relaxed text-textLight">
+          <motion.h2
+            className="text-3xl font-bold text-textLight mb-6 cursor-pointer"
+            onClick={handleDiluteAll}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            Sobre Mí
+          </motion.h2>
+          <motion.p
+            className="mt-4 text-lg leading-relaxed text-textLight"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Soy Omar Leonardo Caiguan Ojeda, desarrollador Full Stack especializado en Back-End. Me apasiona construir soluciones escalables y eficientes con tecnologías como TypeScript, React y Node.js. Con experiencia en proyectos como plataformas de e-commerce y gestión de gimnasios, busco integrarme a equipos donde pueda crecer y aportar valor.
-          </p>
+          </motion.p>
         </section>
 
         <section id="tech-section" className="mb-12">
-          <h2 className="text-3xl font-bold text-textLight mb-6">Tecnologías</h2>
+          <motion.h2
+            className="text-3xl font-bold text-textLight mb-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            Tecnologías
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {techCategories.map((category) => (
-              <TechCategory key={category.title} {...category} />
+            {techCategories.map((category, idx) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, scale: 0.8, y: 40 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + idx * 0.15, type: 'spring' }}
+                viewport={{ once: true }}
+              >
+                <TechCategory {...category} />
+              </motion.div>
             ))}
           </div>
         </section>
 
         <section id="projects-section" className="py-8">
-          <h2 className="text-3xl font-bold text-textLight mb-6">Proyectos</h2>
+          <motion.h2
+            className="text-3xl font-bold text-textLight mb-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            Proyectos
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+            {projects.map((project, idx) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + idx * 0.12 }}
+                viewport={{ once: true }}
+              >
+                <ProjectCard {...project} />
+              </motion.div>
             ))}
           </div>
         </section>
 
         <section id="contact-section" className="py-8">
-          <h2 className="text-3xl font-bold text-textLight mb-6 text-center">Contacto</h2>
-          <div className="flex justify-between gap-4 max-w-2xl mx-auto">
+          <motion.h2
+            className="text-3xl font-bold text-textLight mb-6 text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            Contacto
+          </motion.h2>
+          <motion.div
+            className="flex justify-between gap-4 max-w-2xl mx-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3, type: 'spring' }}
+            viewport={{ once: true }}
+          >
             <a
               href="https://www.linkedin.com/in/omar-leonardo-caiguan-ojeda/"
               target="_blank"
@@ -278,12 +340,20 @@ const About = () => {
             >
               <FaWhatsapp size={48} />
             </a>
-          </div>
+          </motion.div>
         </section>
 
         {/* Nueva sección: Formulario de contacto */}
         <section id="contact-form" className="py-8">
-          <h2 className="text-3xl font-bold text-textLight mb-6 text-center">Envíame un Mensaje</h2>
+          <motion.h2
+            className="text-3xl font-bold text-textLight mb-6 text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            Envíame un Mensaje
+          </motion.h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-lg mx-auto">
             <input
               type="text"
