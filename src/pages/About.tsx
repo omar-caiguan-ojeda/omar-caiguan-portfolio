@@ -26,7 +26,7 @@ import {
 } from "react-icons/si";
 import { FaStripe, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa6";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import CodeBackgroundAbout from "../components/CodeBackgroundAbout";
 import { motion } from "framer-motion";
@@ -38,10 +38,13 @@ const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.El
     <div className="flex-grow flex items-center justify-center">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
         {icons.map(({ Icon, name }) => (
-          <div
+          <motion.div
             key={name}
             className="group flex flex-col items-center justify-center aspect-square"
             title={name}
+            whileHover={{ scale: 1.18 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 320 }}
           >
             <Icon
               className="text-2xl xs:text-3xl sm:text-4xl text-secondary group-hover:text-accent transition-colors duration-300"
@@ -50,7 +53,7 @@ const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.El
             <span className="text-xs text-secondary/0 group-hover:text-secondary transition-all duration-300 mt-2 text-center">
               {name}
             </span>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -195,6 +198,24 @@ const About = () => {
     );
   };
 
+  // Animación de texto tipo "máquina de escribir" para la descripción
+  const fullDescription = "Soy Omar Leonardo Caiguan Ojeda, desarrollador Full Stack especializado en Back-End. Me apasiona construir soluciones escalables y eficientes con tecnologías como TypeScript, React y Node.js. Con experiencia en proyectos como plataformas de e-commerce y gestión de gimnasios, busco integrarme a equipos donde pueda crecer y aportar valor.";
+  const [typedDesc, setTypedDesc] = useState("");
+  useEffect(() => {
+    let i = 0;
+    let timeout: ReturnType<typeof setTimeout>;
+    function type() {
+      if (i <= fullDescription.length) {
+        setTypedDesc(fullDescription.slice(0, i));
+        i++;
+        timeout = setTimeout(type, 18);
+      }
+    }
+    type();
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="min-h-screen bg-darkBg flex flex-col relative overflow-hidden">
       <CodeBackgroundAbout />
@@ -225,13 +246,14 @@ const About = () => {
             Sobre Mí
           </motion.h2>
           <motion.p
-            className="mt-4 text-lg leading-relaxed text-textLight"
+            className="mt-4 text-lg leading-relaxed text-textLight min-h-[120px]"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Soy Omar Leonardo Caiguan Ojeda, desarrollador Full Stack especializado en Back-End. Me apasiona construir soluciones escalables y eficientes con tecnologías como TypeScript, React y Node.js. Con experiencia en proyectos como plataformas de e-commerce y gestión de gimnasios, busco integrarme a equipos donde pueda crecer y aportar valor.
+            {typedDesc}
+            <span className="text-accent animate-pulse">|</span>
           </motion.p>
         </section>
 

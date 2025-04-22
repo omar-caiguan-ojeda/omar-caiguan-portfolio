@@ -11,15 +11,19 @@ Portafolio profesional desarrollado con React, TypeScript y Vite. Presenta mis p
 
 - **Animaciones avanzadas:**
   - Transiciones de entrada y salida usando Framer Motion.
-  - Animaciones sincronizadas entre foto y contenido en la Home.
+  - Animación tipo máquina de escribir en la sección "Sobre mí".
+  - Animaciones reveal suaves y repetibles al hacer scroll en títulos, tarjetas y secciones.
+  - Iconos de tecnologías con efecto de agrandamiento al pasar el mouse.
+  - Imágenes de proyectos con zoom y desenfoque inicial (blur-to-sharp) al cargar y efecto zoom al hover.
+  - Botones y campos de formularios animados (scale y glow al interactuar).
 
 - **Páginas y secciones:**
   - **Home:** Presentación personal, animación de bienvenida y acceso rápido a About.
   - **About:**
-    - Sección "Sobre mí" con descripción profesional.
-    - Tecnologías agrupadas por categorías y visualizadas con iconos.
-    - Proyectos destacados con links a GitHub y despliegues.
-    - Sección de contacto y formulario funcional vía EmailJS.
+    - Sección "Sobre mí" con animación de texto tipo máquina de escribir.
+    - Tecnologías agrupadas por categorías, cada icono tiene efecto interactivo.
+    - Proyectos destacados con imágenes animadas (blur y zoom), links a GitHub y despliegues.
+    - Sección de contacto y formulario funcional vía EmailJS, con campos y botón animados.
 
 - **Integraciones:**
   - **Framer Motion:** Animaciones de componentes y transiciones.
