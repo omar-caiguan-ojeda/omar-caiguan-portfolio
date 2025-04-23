@@ -25,6 +25,7 @@ import {
   SiDocker,
 } from "react-icons/si";
 import { FaStripe, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa6";
+import { FaFileAlt } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
@@ -278,19 +279,13 @@ const About = () => {
           <TypewriterBlock
             paragraphs={[
               {
-                text: "Soy <span class='text-accent font-semibold'>Omar Leonardo Caiguan Ojeda</span>, Desarrollador Full Stack con especialización en <span class='font-semibold text-accent'>Back-End</span>, orientado al desarrollo de soluciones <span class='font-semibold'>escalables</span>, <span class='font-semibold'>eficientes</span> y <span class='font-semibold'>seguras</span>."
+                text: "Soy <span class='text-accent font-semibold'>Omar Leonardo Caiguan Ojeda</span>, Desarrollador Full Stack con enfoque en <span class='font-semibold text-accent'>Back-End</span>. Me especializo en crear soluciones <span class='font-semibold'>escalables</span> y <span class='font-semibold'>seguras</span> usando tecnologías como <span class='font-semibold text-accent'>TypeScript</span>, <span class='font-semibold text-accent'>NestJS</span> y <span class='font-semibold text-accent'>PostgreSQL</span>."
               },
               {
-                text: "Experiencia en construcción de <span class='font-semibold text-accent'>APIs RESTful</span>, integración de servicios externos, autenticación, despliegue con <span class='font-semibold text-accent'>Docker</span> y documentación técnica. Trabajo con tecnologías como <span class='font-semibold text-accent'>TypeScript</span>, <span class='font-semibold text-accent'>NestJS</span>, <span class='font-semibold text-accent'>PostgreSQL</span> y herramientas modernas del ecosistema JavaScript."
+                text: "Tengo experiencia en <span class='font-semibold text-accent'>APIs RESTful</span>, integración de servicios, autenticación y despliegue con <span class='font-semibold text-accent'>Docker</span>. He desarrollado plataformas completas aplicando <span class='font-semibold'>buenas prácticas</span> y <span class='font-semibold'>arquitectura limpia</span>."
               },
               {
-                text: "He desarrollado plataformas completas, desde <span class='font-semibold text-accent'>e-commerce</span> hasta sistemas de gestión, aplicando buenas prácticas de <span class='font-semibold'>código limpio</span> y principios de <span class='font-semibold'>arquitectura sólida</span>."
-              },
-              {
-                text: "Complemento mi perfil técnico con <span class='font-semibold'>habilidades blandas</span> como comunicación efectiva, trabajo en equipo y resolución de problemas bajo presión."
-              },
-              {
-                text: "Busco integrarme a equipos <span class='font-semibold'>dinámicos</span> donde pueda seguir aprendiendo, aportar valor y crecer profesionalmente, siempre con actitud proactiva y compromiso por la mejora continua."
+                text: "Además, cuento con habilidades en <span class='font-semibold'>comunicación</span>, <span class='font-semibold'>trabajo en equipo</span> y <span class='font-semibold'>resolución de problemas</span>. Busco aportar valor en equipos <span class='font-semibold'>dinámicos</span>, aprendiendo y mejorando constantemente."
               }
             ]}
             onFinish={() => setShowSkills(true)}
@@ -394,6 +389,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+              title="LinkedIn"
             >
               <FaLinkedin size={48} />
             </a>
@@ -402,12 +398,14 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+              title="GitHub"
             >
               <FaGithub size={48} />
             </a>
             <a
               href="mailto:omar.caiguan@gmail.com"
               className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+              title="Correo Electrónico"
             >
               <FaEnvelope size={48} />
             </a>
@@ -416,6 +414,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+              title="Discord"
             >
               <SiDiscord size={48} />
             </a>
@@ -424,8 +423,18 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+              title="WhatsApp"
             >
               <FaWhatsapp size={48} />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1JU3sMX3lCxJvKdDRsAvTvntZaYxaS0ET/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+              title="Currículum Vitae"
+            >
+              <FaFileAlt size={48} />
             </a>
           </motion.div>
         </section>

@@ -1,5 +1,6 @@
 // src/components/Footer.tsx
 import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa6";
+import { FaFileAlt } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="max-w-4xl mx-auto px-6 flex justify-between items-center">
         {/* Texto de copyright a la izquierda */}
         <p className="text-secondary text-sm">
-          © {new Date().getFullYear()} Omar Leonardo Caiguan Ojeda. Todos los derechos reservados.
+          {new Date().getFullYear()} Omar Leonardo Caiguan Ojeda. Todos los derechos reservados.
         </p>
 
         {/* Iconos de contacto a la derecha */}
@@ -18,6 +19,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+            title="LinkedIn"
           >
             <FaLinkedin size={24} />
           </a>
@@ -26,12 +28,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+            title="GitHub"
           >
             <FaGithub size={24} />
           </a>
           <a
             href="mailto:omar.caiguan@gmail.com"
             className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+            title="Correo Electrónico"
           >
             <FaEnvelope size={24} />
           </a>
@@ -40,6 +44,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+            title="Discord"
           >
             <SiDiscord size={24} />
           </a>
@@ -48,8 +53,18 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+            title="WhatsApp"
           >
             <FaWhatsapp size={24} />
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1JU3sMX3lCxJvKdDRsAvTvntZaYxaS0ET/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:text-accent transition-all duration-300 transform hover:scale-110"
+            title="Currículum Vitae"
+          >
+            <FaFileAlt size={24} />
           </a>
         </div>
       </div>

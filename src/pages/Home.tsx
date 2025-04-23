@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFileAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { SiDiscord } from "react-icons/si";
 import CodeBackground from "../components/CodeBackground";
@@ -79,6 +79,7 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary hover:text-accent transition-colors duration-300"
+                title="LinkedIn"
               >
                 <FaLinkedin size={28} />
               </a>
@@ -87,12 +88,14 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary hover:text-accent transition-colors duration-300"
+                title="GitHub"
               >
                 <FaGithub size={28} />
               </a>
               <a
                 href="mailto:omar.caiguan@gmail.com"
                 className="text-secondary hover:text-accent transition-colors duration-300"
+                title="Correo Electrónico"
               >
                 <FaEnvelope size={28} />
               </a>
@@ -101,6 +104,7 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary hover:text-accent transition-colors duration-300"
+                title="Discord"
               >
                 <SiDiscord size={28} />
               </a>
@@ -109,8 +113,18 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary hover:text-accent transition-colors duration-300"
+                title="WhatsApp"
               >
                 <FaWhatsapp size={28} />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1JU3sMX3lCxJvKdDRsAvTvntZaYxaS0ET/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-accent transition-colors duration-300"
+                title="Currículum Vitae"
+              >
+                <FaFileAlt size={24} />
               </a>
             </div>
           </div>
