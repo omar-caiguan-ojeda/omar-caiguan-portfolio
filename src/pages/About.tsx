@@ -199,7 +199,7 @@ const About = () => {
   };
 
   // Animación de texto tipo "máquina de escribir" para la descripción
-  const fullDescription = "Soy Omar Leonardo Caiguan Ojeda, desarrollador Full Stack especializado en Back-End. Me apasiona construir soluciones escalables y eficientes con tecnologías como TypeScript, React y Node.js. Con experiencia en proyectos como plataformas de e-commerce y gestión de gimnasios, busco integrarme a equipos donde pueda crecer y aportar valor.";
+  const fullDescription = "Soy Omar Leonardo Caiguan Ojeda, Desarrollador Full Stack con especialización en Back-End, orientado al desarrollo de soluciones escalables, eficientes y seguras. Cuento con experiencia en la construcción de APIs RESTful, integración de servicios externos, autenticación, despliegue con Docker y documentación técnica. Trabajo con tecnologías como TypeScript, NestJS, PostgreSQL y herramientas modernas del ecosistema JavaScript.\n\nHe desarrollado plataformas completas, desde e-commerce hasta sistemas de gestión, aplicando buenas prácticas de código limpio y principios de arquitectura sólida. Complemento mi perfil técnico con habilidades blandas adquiridas durante mi experiencia laboral en entornos de alta exigencia, como la comunicación efectiva, el trabajo en equipo y la resolución de problemas bajo presión.\n\nBusco integrarme a equipos dinámicos, donde pueda seguir aprendiendo, aportar valor y crecer profesionalmente, siempre con actitud proactiva y compromiso por la mejora continua.";
   const [typedDesc, setTypedDesc] = useState("");
   useEffect(() => {
     let i = 0;
