@@ -60,6 +60,49 @@ const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.El
   </div>
 );
 
+// Componente para efecto máquina de escribir línea por línea (párrafos en bloque)
+const TypewriterBlock = ({ paragraphs, onFinish }: { paragraphs: { text: string }[], onFinish?: () => void }) => {
+  const [typed, setTyped] = useState<string[]>(paragraphs.map(() => ""));
+  const [currentLine, setCurrentLine] = useState(0);
+  useEffect(() => {
+    let i = 0;
+    let timeout: ReturnType<typeof setTimeout>;
+    const typeLine = (lineIdx: number) => {
+      if (lineIdx >= paragraphs.length) {
+        if (onFinish) onFinish();
+        return;
+      }
+      const line = paragraphs[lineIdx].text;
+      const typeChar = () => {
+        if (i <= line.length) {
+          setTyped(prev => prev.map((t, idx) => idx === lineIdx ? line.slice(0, i) : t));
+          i++;
+          timeout = setTimeout(typeChar, 16);
+        } else {
+          setCurrentLine(l => l + 1);
+        }
+      };
+      typeChar();
+    };
+    if (currentLine < paragraphs.length) {
+      i = typed[currentLine]?.length || 0;
+      typeLine(currentLine);
+    }
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line
+  }, [currentLine]);
+  return (
+    <div>
+      {paragraphs.map((p, idx) => (
+        <p key={idx} className={`mb-4 text-lg leading-relaxed text-textLight${idx === paragraphs.length - 1 ? ' mb-2' : ''}`}>
+          <span dangerouslySetInnerHTML={{ __html: typed[idx] }} />
+          {currentLine === idx && <span className="text-accent animate-pulse">|</span>}
+        </p>
+      ))}
+    </div>
+  );
+};
+
 const About = () => {
   const navigate = useNavigate();
 
@@ -154,6 +197,9 @@ const About = () => {
   // Estado para la animación de salida
   const [diluteAll, setDiluteAll] = useState(false);
 
+  // Estado para mostrar habilidades
+  const [showSkills, setShowSkills] = useState(false);
+
   // Efecto de diluir todo el contenido antes de navegar al Home
   const handleDiluteAll = () => {
     if (diluteAll) return;
@@ -198,24 +244,6 @@ const About = () => {
     );
   };
 
-  // Animación de texto tipo "máquina de escribir" para la descripción
-  const fullDescription = "Soy Omar Leonardo Caiguan Ojeda, Desarrollador Full Stack con especialización en Back-End, orientado al desarrollo de soluciones escalables, eficientes y seguras. Cuento con experiencia en la construcción de APIs RESTful, integración de servicios externos, autenticación, despliegue con Docker y documentación técnica. Trabajo con tecnologías como TypeScript, NestJS, PostgreSQL y herramientas modernas del ecosistema JavaScript.\n\nHe desarrollado plataformas completas, desde e-commerce hasta sistemas de gestión, aplicando buenas prácticas de código limpio y principios de arquitectura sólida. Complemento mi perfil técnico con habilidades blandas adquiridas durante mi experiencia laboral en entornos de alta exigencia, como la comunicación efectiva, el trabajo en equipo y la resolución de problemas bajo presión.\n\nBusco integrarme a equipos dinámicos, donde pueda seguir aprendiendo, aportar valor y crecer profesionalmente, siempre con actitud proactiva y compromiso por la mejora continua.";
-  const [typedDesc, setTypedDesc] = useState("");
-  useEffect(() => {
-    let i = 0;
-    let timeout: ReturnType<typeof setTimeout>;
-    function type() {
-      if (i <= fullDescription.length) {
-        setTypedDesc(fullDescription.slice(0, i));
-        i++;
-        timeout = setTimeout(type, 18);
-      }
-    }
-    type();
-    return () => clearTimeout(timeout);
-    // eslint-disable-next-line
-  }, []);
-
   return (
     <div className="min-h-screen bg-darkBg flex flex-col relative overflow-hidden">
       <CodeBackgroundAbout />
@@ -245,16 +273,53 @@ const About = () => {
           >
             Sobre Mí
           </motion.h2>
-          <motion.p
-            className="mt-4 text-lg leading-relaxed text-textLight min-h-[120px]"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {typedDesc}
-            <span className="text-accent animate-pulse">|</span>
-          </motion.p>
+
+          {/* Máquina de escribir línea por línea */}
+          <TypewriterBlock
+            paragraphs={[
+              {
+                text: "Soy <span class='text-accent font-semibold'>Omar Leonardo Caiguan Ojeda</span>, Desarrollador Full Stack con especialización en <span class='font-semibold text-accent'>Back-End</span>, orientado al desarrollo de soluciones <span class='font-semibold'>escalables</span>, <span class='font-semibold'>eficientes</span> y <span class='font-semibold'>seguras</span>."
+              },
+              {
+                text: "Experiencia en construcción de <span class='font-semibold text-accent'>APIs RESTful</span>, integración de servicios externos, autenticación, despliegue con <span class='font-semibold text-accent'>Docker</span> y documentación técnica. Trabajo con tecnologías como <span class='font-semibold text-accent'>TypeScript</span>, <span class='font-semibold text-accent'>NestJS</span>, <span class='font-semibold text-accent'>PostgreSQL</span> y herramientas modernas del ecosistema JavaScript."
+              },
+              {
+                text: "He desarrollado plataformas completas, desde <span class='font-semibold text-accent'>e-commerce</span> hasta sistemas de gestión, aplicando buenas prácticas de <span class='font-semibold'>código limpio</span> y principios de <span class='font-semibold'>arquitectura sólida</span>."
+              },
+              {
+                text: "Complemento mi perfil técnico con <span class='font-semibold'>habilidades blandas</span> como comunicación efectiva, trabajo en equipo y resolución de problemas bajo presión."
+              },
+              {
+                text: "Busco integrarme a equipos <span class='font-semibold'>dinámicos</span> donde pueda seguir aprendiendo, aportar valor y crecer profesionalmente, siempre con actitud proactiva y compromiso por la mejora continua."
+              }
+            ]}
+            onFinish={() => setShowSkills(true)}
+          />
+
+          {showSkills && (
+            <motion.div
+              className="flex flex-wrap gap-2 mt-4"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.15 } }
+              }}
+            >
+              {["TypeScript", "NestJS", "Docker", "PostgreSQL", "APIs RESTful", "Comunicación", "Trabajo en equipo"].map(skill => (
+                <motion.span
+                  key={skill}
+                  className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold shadow-sm"
+                  variants={{
+                    hidden: { opacity: 0, y: 18 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </motion.div>
+          )}
         </section>
 
         <section id="tech-section" className="mb-12">
