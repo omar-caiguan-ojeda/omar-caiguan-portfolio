@@ -23,9 +23,14 @@ import {
   SiSwagger,
   SiCloudinary,
   SiDocker,
+  SiFramer,
+  SiReactquery,
+  SiVite,
+  SiBootstrap,
+  SiEslint,
 } from "react-icons/si";
 import { FaStripe, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa6";
-import { FaFileAlt } from "react-icons/fa";
+import { FaFileAlt, FaMusic } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
@@ -148,6 +153,37 @@ const About = () => {
   ];
 
   const projects = [
+    {
+      title: "TutoGo Radio",
+      description: "App web de transmisión de radio por internet, ofrecer a los usuarios una experiencia auditiva moderna, fluida y accesible.",
+      images: ["/P5/P5.png"],
+      githubLink: "https://github.com/omar-caiguan-ojeda/TutoGo-Radio",
+      deployLink: "https://tutogoradio.vercel.app/",
+      techIcons: [
+        SiNextdotjs,
+        SiReact,
+        SiTailwindcss,
+        SiFramer,
+        SiJavascript,
+        FaMusic,
+        SiReactquery
+      ],
+    },
+    {
+      title: "Magic Quest",
+      description: "App web promociona juego de rol",
+      images: ["/P4/P4.png"],
+      githubLink: "https://github.com/omar-caiguan-ojeda/React-Project-V2",
+      deployLink: "https://magic-quest.vercel.app/",
+      techIcons: [
+        SiReact,
+        SiVite,
+        SiTailwindcss,
+        SiFramer,
+        SiBootstrap,
+        SiEslint
+      ],
+    },
     {
       title: "Fit Manager",
       description: "Gestión y administración de gimnasios",

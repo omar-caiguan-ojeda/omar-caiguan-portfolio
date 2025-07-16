@@ -26,7 +26,7 @@ const Home = () => {
     <div className="relative min-h-screen flex items-center justify-center p-6 bg-darkBg overflow-hidden">
       <CodeBackground />
       <GlobalGlow active={glow} />
-      <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-10 max-w-4xl mx-auto w-full">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-center gap-8 md:gap-10 max-w-4xl mx-auto w-full text-center">
         <motion.div
           initial={isExiting ? { y: 0, opacity: 1, filter: 'blur(0px)' } : { x: -200, opacity: 0, filter: 'blur(12px)' }}
           animate={isExiting ? { y: -200, opacity: 0, filter: 'blur(12px)' } : { x: 0, y: 0, opacity: 1, filter: 'blur(0px)' }}
