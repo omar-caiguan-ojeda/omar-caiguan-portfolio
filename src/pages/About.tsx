@@ -282,7 +282,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-darkBg flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-darkBg flex flex-col relative overflow-x-hidden">
       <CodeBackgroundAbout />
       <motion.div
         initial={{ x: -200, opacity: 0, filter: 'blur(12px)' }}
