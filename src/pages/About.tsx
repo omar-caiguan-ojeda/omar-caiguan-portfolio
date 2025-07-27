@@ -1115,6 +1115,7 @@ import {
   SiVite,
   SiBootstrap,
   SiEslint,
+  SiZod,
 } from "react-icons/si";
 import { FaStripe, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa6";
 import { FaFileAlt, FaMusic } from "react-icons/fa";
@@ -1124,6 +1125,9 @@ import emailjs from "@emailjs/browser";
 import CodeBackgroundAbout from "../components/CodeBackgroundAbout";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import ZodIcon from "../components/icons/ZodIcon";
+import ZustandIcon from "../components/icons/ZustandIcon";
+import SWRIcon from "../components/icons/SWRIcon";
 
 const TechCategory = ({ title, icons }: { title: string; icons: { Icon: React.ElementType; name: string }[] }) => (
   <div className="bg-darkBg/50 backdrop-blur-sm p-2 xs:p-3 sm:p-4 rounded-lg border border-primary/20 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
@@ -1238,6 +1242,24 @@ const About = () => {
   ];
 
   const projects = [
+    {
+      title: "Fresh Coffee",
+      description: "Plataforma web moderna para la gestión y venta de productos de cafetería. Permite a administradores gestionar productos, órdenes y categorías, mientras los usuarios pueden explorar y comprar de manera intuitiva.",
+      images: ["/P6/P6.png"],
+      githubLink: "https://github.com/omar-caiguan-ojeda/Fresh-Coffee",
+      deployLink: "https://fresh-coffee-web.vercel.app/",
+      techIcons: [
+        SiNextdotjs,
+        SiReact,
+        SiTypescript,
+        SiTailwindcss,
+        SiPrisma,
+        //ZodIcon,
+        //ZustandIcon,
+        //SWRIcon,
+        SiCloudinary,
+      ],
+    },
     {
       title: "TutoGo Radio",
       description: "App web de transmisión de radio por internet, ofrecer a los usuarios una experiencia auditiva moderna, fluida y accesible.",
