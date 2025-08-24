@@ -1,0 +1,38 @@
+/* 3D carousel helpers */
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@keyframes spin-slow {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
+
+/* Animación de rebote suave por ítem usando CSS (más performante que JS por frame) */
+@keyframes tech-bounce-soft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--amp, 12px));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounce-soft {
+  animation-name: tech-bounce-soft;
+  animation-duration: var(--period, 3.2s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
